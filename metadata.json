@@ -1,0 +1,6 @@
+{
+	"name": "COVID-19 Tracker",
+	"description": "Extension for the Gnome topbar which displays COVID-19 data by country",
+	"uuid": "covid19tracker@casillajec.github.io",
+	"shell-version": ["3.30.2"]
+}
