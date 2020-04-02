@@ -9,5 +9,8 @@
     <key name="selected-country" type="s">
       <default>"WRL"</default>
     </key>
+    <key name="update-frequency" type="i">
+		<default>600</default>
+    </key>
   </schema>
 </schemalist>

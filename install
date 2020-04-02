@@ -1,0 +1,2 @@
+mkdir ~/.local/share/gnome-shell/extensions/covid19tracker@casillajec.github.io
+cp -r `ls -A | grep -v -e '\.git' -e 'install -e zipit'` ~/.local/share/gnome-shell/extensions/covid19tracker\@casillajec.github.io

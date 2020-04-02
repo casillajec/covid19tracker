@@ -18,9 +18,6 @@ const URL = 'https://corona-stats.online/';
 const DIAMOND_PRINCESS_CC = 'DP';
 const WORLD_CC = 'WRL';
 
-//const REFRESH_FREQUENCY = 900;  // seconds, 15m
-const REFRESH_FREQUENCY = 30;  // seconds, 15m
-
 /**
  * Returns an array with indices indicating the order
  * of the array ordered by the specified valueName
@@ -93,6 +90,8 @@ const Covid19Tracker = new Lang.Class({
 		this.cache = this.transformRawCache(rawCache);
 		// Read country config
 		this.selectedCountry = this.cacheSchema.get_string('selected-country');
+		// Rea dupdate frequency
+		this.updateFrequency = this.cacheSchema.get_int('update-frequency');
 		
 		// Reference to the session object so that we can stop it if neccesary
 		this.httpSession = new Soup.Session();
@@ -387,7 +386,7 @@ const Covid19Tracker = new Lang.Class({
 			Mainloop.source_remove(this.timeout);
 			this.timeout = null;
 		}
-		this.timeout = Mainloop.timeout_add_seconds(REFRESH_FREQUENCY, Lang.bind(this, this.updateCache));
+		this.timeout = Mainloop.timeout_add_seconds(this.updateFrequency, Lang.bind(this, this.updateCache));
 		
 		return true;
 	},

@@ -1,0 +1,1 @@
+zip -r covid19tracker\@casillajec.github.io.zip . -x  ".git/*" -x "zipit" -x "install"
