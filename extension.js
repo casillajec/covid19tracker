@@ -98,11 +98,16 @@ const Covid19Tracker = new Lang.Class({
 		
 		// Extension's layout
 		this.mainLayout = new St.BoxLayout();
-		this.actor.add_actor(this.mainLayout);
+		// Compatibility with newer gnome-shell
+		if (this.add_actor) {
+			this.add_actor(this.mainLayout);
+		} else {
+			this.actor.add_actor(this.mainLayout);
+		}
 		
 		// Flag icon
-		let iconSize = new Clutter.Size({width: FLAG_WIDTH, height: FLAG_HEIGHT});
-		this.flagIcon = new St.Icon({style_class: 'flag-icon', size: iconSize});
+		this.flagIcon = new St.Icon({style_class: 'flag-icon'});
+		this.flagIcon.set_size(FLAG_WIDTH, FLAG_HEIGHT);
 		this.mainLayout.add(this.flagIcon);
 		
 		// Stats text

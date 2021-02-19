@@ -1,6 +1,7 @@
 {
 	"name": "COVID-19 Tracker",
-	"description": "Extension for the Gnome topbar which displays COVID-19 data by country",
+	"description": "Extension for the Gnome topbar which displays COVID-19 data by country.\nThe data is pulled from https://github.com/NovelCOVID/API/",
 	"uuid": "covid19tracker@casillajec.github.io",
-	"shell-version": ["3.30.2"]
+	"shell-version": ["3.30.2", "3.36.0"],
+	"version" : 1.2
 }
